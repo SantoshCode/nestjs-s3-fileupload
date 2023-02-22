@@ -1,4 +1,5 @@
 import { NestFactory } from '@nestjs/core';
+import { json } from 'express';
 import { AppModule } from './app.module';
 
 // import { ConfigService } from '@nestjs/config';
@@ -6,6 +7,10 @@ import { AppModule } from './app.module';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+
+  app.enableCors();
+
+  app.use(json({ limit: '50mb' }));
 
   // config aws-sdk
 

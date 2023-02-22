@@ -14,6 +14,6 @@ export class FileController {
   @Post('upload')
   @UseInterceptors(FileInterceptor('fileBuffer'))
   async create(@UploadedFile() fileBuffer: Express.Multer.File) {
-    return await this.fileService.create(fileBuffer);
+    return await this.fileService.uploadFile(fileBuffer);
   }
 }
