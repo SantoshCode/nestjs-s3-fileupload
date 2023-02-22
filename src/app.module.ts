@@ -5,7 +5,6 @@ import { AppService } from './app.service';
 import { FileModule } from './file/file.module';
 import * as path from 'path';
 import { ConfigModule, ConfigService } from '@nestjs/config';
-import { BlogModule } from './blog/blog.module';
 import configuration from './config/configuration';
 
 const currentProjectPath = path.resolve();
@@ -43,7 +42,6 @@ const currentProjectPath = path.resolve();
     //   autoLoadEntities: true,
     // }),
     FileModule,
-    BlogModule,
   ],
   controllers: [AppController],
   providers: [AppService],
