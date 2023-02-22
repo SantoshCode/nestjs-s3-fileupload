@@ -1,4 +1,5 @@
 import { Controller, Get, Post, Body } from '@nestjs/common';
+// import * as sanitize from 'sanitize-html';
 import { BlogService } from './blog.service';
 import { CreateBlogDto } from './dto/create-blog.dto';
 
@@ -8,6 +9,10 @@ export class BlogController {
 
   @Post()
   create(@Body() createBlogDto: CreateBlogDto) {
+    // lets not use sanitize for now
+    // createBlogDto.content = sanitize(createBlogDto.content, {
+    //   allowedTags: ['img'],
+    // });
     return this.blogService.create(createBlogDto);
   }
 

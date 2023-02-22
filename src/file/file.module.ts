@@ -9,5 +9,6 @@ import { ConfigModule } from '@nestjs/config';
   imports: [TypeOrmModule.forFeature([UploadFile]), ConfigModule],
   controllers: [FileController],
   providers: [FileService],
+  exports: [FileService],
 })
 export class FileModule {}

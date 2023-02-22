@@ -5,6 +5,6 @@ export class Blog {
   @PrimaryGeneratedColumn()
   id: string;
 
-  @Column({ type: 'long' })
+  @Column({ type: 'longtext' })
   content: string;
 }
